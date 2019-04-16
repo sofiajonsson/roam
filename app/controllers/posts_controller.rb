@@ -1,23 +1,26 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:edit, :update, :destroy, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
   end
 
   def new
     @post = Post.new
+    @location = Location.new
   end
 
   def show
+    @user = @post.user
+    @location = @post.location
   end
 
   def create
-    @post = Post.new(post_params(:title, :description, :user_id, :post_id))
-    if @post.save
-      redirect_to post_path(@post)
+    post = Post.new(post_params)
+    if post.save
+      redirect_to post_path(post)
     else
-      flash[:errors] = @post.errors.full_messages
+      flash[:errors] = post.errors.full_messages
       redirect_to new_post_path
     end
   end
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params(:title, :description))
+    if @post.update(post_params)
       redirect_to post_path(@post)
     else
       flash[:errors] = @post.errors.full_messages
@@ -48,8 +51,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def post_params(*args)
-    params.require(:post).permit(*args)
+  def post_params
+    params.require(:post).permit!
   end
 
 end
