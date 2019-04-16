@@ -1,0 +1,13 @@
+
+<%= @user.username %>
+<% if @user == current_user %>
+Edit profile: <%= edit_user_path(@user)%>
+ <% end %>
+
+
+<%= @posts.count %>
+
+<% @posts.each do |post|%>
+  <%=link_to post_path(post) do %>
+  	<%=image_tag (post.image) if post.image.attached? %>
+<% end %>
