@@ -1,0 +1,19 @@
+<h1>Welcome to Roam</h1>
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
+
+<p>Please Login or Sign Up to Access our Feed</p>
+
+<%= form_tag login_path do %>
+  <%= label_tag :username %>
+  <div class="field">
+    <%= text_field_tag :username %>
+  </div>
+  <%= label_tag :password %>
+  <div class="field">
+    <%= password_field_tag :password %>
+  </div>
+  <%= submit_tag 'Login', {class: 'ui medium pink button inverted'} %>
+<% end %>
