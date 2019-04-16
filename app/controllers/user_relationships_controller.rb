@@ -26,5 +26,5 @@ class UserRelationshipsController < ApplicationController
     end
     redirect_to "/users/#{@user_relationship.followed_user.id}/profile"
   end
-  
+
 end

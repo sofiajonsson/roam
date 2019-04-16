@@ -1,0 +1,17 @@
+<h2>Make a New Post</h2>
+
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |m| %>
+    <%= m %>
+  <% end%>
+<% end %>
+
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
