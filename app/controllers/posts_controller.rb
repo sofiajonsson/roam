@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @posts = Post.all 
   end
 
   def new
@@ -11,8 +12,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = @post.user
-    @location = @post.location
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def create

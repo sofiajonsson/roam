@@ -10,15 +10,6 @@ Post.destroy_all
 Location.destroy_all
 User.destroy_all
 Comment.destroy_all 
-# france = Location.create(country: "France", city: "Saint-Tropez")
-# grand = Location.create(country: "USA", city: "Grand Canyon")
-# brazil = Location.create(country: "Brazil", city: "Sao Paulo")
-# rockies = Location.create(country: "Canada", city: "Rockies")
-
-# mera = User.create(username: "Mera", password: "hi", bio: "Hi, my name Mera. I like to travel.")
-
-# Post.create(title: "St Tropez", description: "Went to the French Riviera in September omg it was so beautiful.", photo_url: "https://cdn2.veltra.com/ptr/20180716125616_1413743232_3327_0.jpg?imwidth=550&impolicy=custom", user: mera, location: france)
-
 
 
 puts "Seeding Users..."
@@ -64,4 +55,4 @@ puts "Seeding Comments..."
 	c9=Comment.create(comment: "What was your tastiest treat?", user_id: u5, post_id: p3),
 	c10=Comment.create(comment: "That looks like such a great trip", user_id: u5, post_id: p1)
 
-# # ]
+
