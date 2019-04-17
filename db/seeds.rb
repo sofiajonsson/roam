@@ -17,13 +17,13 @@ Post.create(title: "St Tropez", description: "Went to the French Riviera in Sept
 
 
 
-puts "Seeding Users..."
-u1 = User.create(username: "Sofia", password: "hello", bio: " I'm just here for the international dog pics")
- # @u2= User.create(username: " Mera ", password: " hello ", bio: "Hi, my name Mera. I like to travel")
-u3 = User.create(username: "Doug", password: "hello", bio: "I love coldbrew and travel")
-u4 = User.create(username: "Rylan", password: "hello", bio: "I'm just living the dream")
-u5 = User.create(username: "Lotti", password: "hello", bio: "Always on the hunt for the best treats")
-
+# puts "Seeding Users..."
+# u1 = User.create(username: "Sofia", password: "hello", bio: " I'm just here for the international dog pics")
+#  # @u2= User.create(username: " Mera ", password: " hello ", bio: "Hi, my name Mera. I like to travel")
+# u3 = User.create(username: "Doug", password: "hello", bio: "I love coldbrew and travel")
+# u4 = User.create(username: "Rylan", password: "hello", bio: "I'm just living the dream")
+# u5 = User.create(username: "Lotti", password: "hello", bio: "Always on the hunt for the best treats")
+#
 
 
 
