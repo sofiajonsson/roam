@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	skip_before_action :authenticate_user, only: [:new, :create]
 
 	def show
-		# @posts=@user.posts.order(created_at: :desc)
+		@posts=@user.posts.order(created_at: :desc)
 	end
 
 	def new
