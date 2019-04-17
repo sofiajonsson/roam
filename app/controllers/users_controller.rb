@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-	before_action :set_user [:edit, :show]
+	before_action :set_user, only: [:edit, :show]
+	skip_before_action :authenticate_user, only: [:new, :create]
+
 	def show
-		@posts=@user.posts.order(created_at: :desc)
+		# @posts=@user.posts.order(created_at: :desc)
 	end
 
 	def new
@@ -14,9 +16,8 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to posts_path
 		else
-			flash[:messages] = user.errors.full_messages
-			redirect_to new_user_path
-			render :edit
+			flash[:messages] = @user.errors.full_messages
+			redirect_to posts_path
 		end
 	end
 
@@ -29,6 +30,11 @@ class UsersController < ApplicationController
 		redirect_to current_user
 	end
 
+	def profile
+    @user_relationship = current_user.active_relationships.where(followed_id: @user.id).first
+    render :profile
+  end
+
 	private
 
 	def set_user
@@ -36,7 +42,6 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-		params.permit(:user).permit!
-		#(:username, :password)
+		params.permit(:user).permit(:username, :password)
 	end
 end
