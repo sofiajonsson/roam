@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <head>
-        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-       <%= csrf_meta_tags %>
-      </head>
-      <body>
-    <!-- Renders navigation file located at app/views/layouts/_navigation.html.erb -->
-    <%= render "layouts/navigation" %>
+    <title>Roam</title>
+    <%= csrf_meta_tags %>
 
-    <div class="container-fluid">
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-light bg-light d-flex">
+      <div class="container">
+        <div class="logo">
+          <a class="navbar-brand" href="#", >
+            <%= link_to (fa_stacked_icon "plane"), root_path%>
+            Roam
+          </a>
+        </div>
+
+
+<%= render "layouts/navigation" %>
+    <!--Main content-->
+    <main class="container" style="min-height: 500px;">
       <%= yield %>
-    </div>
+    </main>
+
+    <!---Footer--->
+    <footer class="container footer">
+      <nav class="navbar d-flex">
+        <ul>
+          <li>ABOUT US</li>
+          <li>PRIVACY</li>
+          <li>TERMS</li>
+          <li>DIRECTORY</li>
+          <li>PROFILES</li>
+          <li>LANGUAGE</li>
+        </ul>
+        <p> © 2019 ROAM </p>
+      </nav>
+    </footer>
   </body>
 </html>
