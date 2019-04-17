@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		# byebug
 		comment = Comment.create(comment_params)
 		redirect_to post_path(comment.post)
 	end
@@ -16,7 +15,7 @@ class CommentsController < ApplicationController
 	end
 
 	def update
-		byebug
+		# byebug
 		comment = Comment.find(params[:id])
 		comment.update(comment_params)
 		if comment.save
