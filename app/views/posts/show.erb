@@ -3,3 +3,30 @@ Photo: <img src="<%= @post.photo_url %>"> <br>
 By: <%= @post.user.username %> <br>
 Location: <%= @post.location.name %> <br>
 Description: <%= @post.description %> <br>
+
+<br>
+
+Comments:
+
+<br>
+<% @comments.each do |comment| %>
+Username: <%= comment.user.username %> <br>
+Comment: <%= comment.text %> <br>
+<%= link_to 'Edit Comment', edit_comment_path(comment) %> <br>
+<%= button_to 'Delete Comment', comment_path(comment), method: :delete %> <br>
+<% end %>
+<br>
+
+
+
+
+Add a New Comment:
+
+<br>
+<%= form_for @comment do |f| %>
+  <%= "Current User says:" %><br>
+  <%= f.text_area :text %><br>
+  <%= f.hidden_field :post_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit %>
+<% end %>

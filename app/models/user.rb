@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   #validations
   validates :username, uniqueness: true
-  validates_length_of :password, minimum: 6
+  validates_length_of :password, minimum: 1
 end
