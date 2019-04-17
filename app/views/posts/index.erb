@@ -1,5 +1,12 @@
-<% if flash[:message] %>
-<%= flash[:message] %>
-<% end %>
 
-Hello, it's the POsts INDEX YAY
+<%= flash[:message] %>
+
+
+All Posts<br>
+
+
+<% @posts.each do |post| %>
+<%= link_to post.title, post_path(post) %><br>
+By: <%= link_to post.user.username, user_path(post.user) %><br>
+<br>
+<% end %>
