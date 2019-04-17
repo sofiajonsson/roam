@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home"> Slope-Side-Sales </a>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'Posts', posts_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'Sign Up', new_user_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <% if session[:user_id] %>
+        <li><%=link_to 'Logout', "/logout", {method: :delete}  %></li>
+        <% else %>
+        <li><%= link_to 'Login', login_path(@user) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
