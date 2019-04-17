@@ -14,7 +14,7 @@ before_action :authenticate_user
  end
 
  def authenticate_user
-   if !logged_in
+   if !logged_in?
      redirect_to login_path
    end
  end

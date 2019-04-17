@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-	before_action :set_user [:edit, :show]
+	before_action :set_user, [:edit, :show]
+
 	def show
-		@posts=@user.posts.order(created_at: :desc)
+		# @posts=@user.posts.order(created_at: :desc)
 	end
 
 	def new
@@ -36,7 +37,6 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-		params.permit(:user).permit!
-		#(:username, :password)
+		params.permit(:user).permit(:username, :password)
 	end
 end
