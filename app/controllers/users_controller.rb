@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :show]
 	skip_before_action :authenticate_user, only: [:new, :create]
 
+	def index
+		@users = User.all
+	end
 	def show
 		@posts=@user.posts.order(created_at: :desc)
 	end
