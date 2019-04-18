@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get "/users/:id", to: 'users#show'
   get "/users/:id/profile", to: 'users#profile'
+  get '/search', to: 'search#index'
+  get '/feed', to: 'feed#index', as: "feed"
 end
