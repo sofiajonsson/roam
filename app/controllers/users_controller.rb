@@ -6,7 +6,10 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 	def show
-		@posts=@user.posts.order(created_at: :desc)
+		@current_user = current_user
+		@user = User.find(params[:id])
+		@posts = @user.posts.order(created_at: :desc)
+		@user_relationship = current_user.active_relationships.where(followed_id: @user.id).first
 	end
 
 	def new
@@ -33,10 +36,12 @@ class UsersController < ApplicationController
 		redirect_to current_user
 	end
 
-	def profile
-    @user_relationship = current_user.active_relationships.where(followed_id: @user.id).first
-    render :profile
-  end
+	# def profile
+	# 	@current_user = current_user
+	# 	@user = User.find(params[:id])
+  #   @user_relationship = current_user.active_relationships.where(followed_id: @user.id).first
+  #   render :show
+  # end
 
 	private
 

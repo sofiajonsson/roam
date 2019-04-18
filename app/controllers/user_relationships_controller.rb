@@ -10,11 +10,11 @@ class UserRelationshipsController < ApplicationController
     @user_relationship = current_user.active_relationships.new(followed_id: @followed_user.id)
 
     if @user_relationship.save
-      flash[:message] = "You are now a follower"
-      redirect_to "/users/#{@followed_user.id}/profile"
+
+      redirect_to "/users/#{@followed_user.id}"
     else
-      flash[:message] = "You are not a follower"
-      redirect_to "/users/#{@followed_user.id}/profile"
+    
+      redirect_to "/users/#{@followed_user.id}"
     end
   end
 
@@ -24,7 +24,7 @@ class UserRelationshipsController < ApplicationController
       @user_relationship.destroy
       flash[:message] = "Unfollowed"
     end
-    redirect_to "/users/#{@user_relationship.followed_user.id}/profile"
+    redirect_to "/users/#{@user_relationship.followed_user.id}"
   end
 
 end
