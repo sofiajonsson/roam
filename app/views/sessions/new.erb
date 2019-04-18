@@ -6,7 +6,7 @@
 
 <p>Please Login or Create an Account to Access Roam </p>
 
-<%= form_tag login_path do %>
+<%= form_tag @user do %>
   <%= label_tag :username %>
   <div class="field">
     <%= text_field_tag :username %>

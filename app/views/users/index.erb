@@ -1,9 +1,30 @@
-<h2>Members of Roam</h2>
+<div class="container">
 
-<ul>
-<% @users.each do |user| %>
-<li>
-	<%= link_to user.username, user %>
-</li>
-<% end %>
-</ul>
+  <!-- Page Heading -->
+  <h1 class="my-4">Find New Users on Roam</h1>
+
+  <br>
+  <div class='message'><%= flash[:message] %></div>
+  <br>
+
+  <div class="row">
+
+
+    <% @users.each do |user| %>
+
+
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="<%= user_path(user) %>"><img class="card-img-top" src="<%= user.photo_url %>" alt=""></a>
+          <div class="card-body">
+
+            <h5 class="card-user"><%= link_to user.username, user_path(user) %></h5>
+            <p class="card-text"><%= user.bio %></p>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+
+  </div>

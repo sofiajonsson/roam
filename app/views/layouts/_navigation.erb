@@ -1,22 +1,43 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to 'Posts', posts_path %> </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-left">
+
+
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<%= posts_path %>">Browse</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= feed_path %>">Feed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= users_path(@user) %>">Profiles</a>
+      </li>
+      <li class="nav-item">
         <% if !session[:user_id] %>
-        <li><%= link_to 'Sign Up', new_user_path %></li>
+        <a class="nav-link" href="<%= new_user_path %>">Sign Up</a>
         <% end %>
-      </ul>
-      <ul class="nav navbar-nav navbar-left">
+      </li>
+      <li class="nav-item">
         <% if session[:user_id] %>
-        <li><%=link_to 'Logout', "/logout", {method: :delete}  %></li>
+            <%=button_to 'Logout', "/logout", {method: :delete}  %>
         <% else %>
-        <li><%= link_to 'Login', login_path(@user) %></li>
+          <a class="nav-link" href="<%= login_path(@user) %>">Login</a>
         <% end %>
-      </ul>
-    </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item avatar">
+        <a class="nav-link p-0" href="#">
+              <img src="https://previews.123rf.com/images/nereia/nereia1802/nereia180200066/95113959-floral-watercolor-alphabet-monogram-initial-letter-r-design-with-hand-drawn-peony-flower-for-wedding.jpg" class="rounded-circle z-depth-0"
+
+
+            alt="avatar image" height="50">
+        </a>
+      </li>
+    </ul>
   </div>
+
 </nav>
+<!--/.Navbar -->
