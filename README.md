@@ -23,3 +23,7 @@ rails db:seed (if you would like to user our seed data)
 https://dev.to/knheidorn/rails-crash-course-building-follower-following-relationship-4kjl
 
 https://startbootstrap.com/snippets/portfolio-three-column/
+
+https://fontawesome.com/v4.7.0/icons/
+
+https://startbootstrap.com/snippets/portfolio-item/
