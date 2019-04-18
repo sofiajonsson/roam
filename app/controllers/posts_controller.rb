@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @current_user = current_user
     @post = Post.new
     @location = Location.new
   end

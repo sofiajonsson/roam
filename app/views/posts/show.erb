@@ -4,12 +4,21 @@ By: <%= @post.user.username %> <br>
 Location: <%= @post.location.name %> <br>
 Description: <%= @post.description %> <br>
 
-<br>
 <% if @post.user.id == @current_user.id %>
-  <%= link_to 'Edit Post', edit_post_path(@post) %> <br>
-  <%= button_to 'Delete post', post_path(@post), method: :delete %> <br>
+  <%= link_to edit_post_path(@post) do %>
+    <i class="fa fa-pencil-square-o"></i>
+  <% end %>
+  <%= link_to post_path(@post), method: :delete, data: { confirm: "Are you sure?"} do %>
+    <i class="fa fa-trash"></i>
+  <% end %>
+  <br>
 <% end %>
 <br>
+
+
+
+
+
 
 Comments:
 
@@ -19,9 +28,13 @@ Comments:
 Username: <%= comment.user.username %> <br>
 Comment: <%= comment.text %> <br>
   <% if comment.user.id == @current_user.id %>
-    <%= link_to 'Edit Comment', edit_comment_path(comment) %> <br>
-    <%= button_to 'Delete Comment', comment_path(comment), method: :delete %> <br>
-  <% end %>
+    <%= link_to edit_comment_path(comment) do %>
+      <i class="fa fa-pencil-square-o"></i>
+    <% end %>
+    <%= link_to comment_path(comment), method: :delete do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  <% end %> <br>
 <% end %>
 <br>
 
