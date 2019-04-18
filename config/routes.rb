@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get "/users/:id/profile", to: 'users#profile'
   get '/search', to: 'search#index'
   get '/feed', to: 'feed#index', as: "feed"
+  get '/profile', to: 'profile#index', as: "profile"
 end
