@@ -1,44 +1,59 @@
 <div class="user-profile">
   <div class="profile row">
     <div class="col-md-4 avatar">
-
-      <ul class="posts">
-        <!-- @posts.count -->
-       <li><span><%= @posts.count %></span> posts</li>
-       <li><span><%= 495 %></span> followers</li>
-       <li><span><%= 345 %></span> following</li>
-      </ul>
-      <h2 class="username"><%= @user.username %></h2>
-    </div>
-
-
-    <!-- In images section: Each row of this section will present 3 images as below: -->
-    <div class="user-images">
-      <% @posts.each do |post|%>
-        <div class="wrapper">
-          <%=link_to post_path(post) do %>
-          <div class="col-md-4">
-
-          </div>
-        <% end %>
+      <!-- LEFT: AVATAR HERE -->
+      <div class="wrapper">
+        <img src="<%= @user.photo_url %>">
       </div>
-    <% end %>
-  </div>
-
-  <div class="container">
-    <div class="row">
-
-        <% @posts.each do |post|%>
-
-
-            <div class="col-md-4">
-              <%=link_to post_path(post) do %>
-
-            </div>
-          <% end %>
-
-      <% end %>
     </div>
+    <div class="col-md-8 basic-info">
+    <!-- RIGHT: USER INFORMATION HERE -->
+      <div class="user-wrapper">
+          <a class="edit-profile" href="<%= edit_user_path(@user)%>"></a>
+          <%= button_to "Edit Profile", edit_user_path, method: :get %>
+          <%= button_to "Follow", user_relationships_path(:id => @user.id), :method => :post, :remote => 'true', :class => "FollowButton_small"%>
+      </div>
+          "<%= @user.bio %>"
+  </div>
+  <br><br><br>
+  <div class="user-tabs">
+    <a class="tab active" href="">
+      <i class="fa fa-th"></i>
+      <li><span><%= @posts.count %></span> posts</li>
+    </a>
+    <a class="tab" href="">
+      <i class="fa fa-tv"></i>
+      <li><span><%= 11 %></span> followers</li>
+    </a>
+    <a class="tab" href="">
+      <i class="fa fa-bookmark"></i>
+      <li><span><%= 3  %></span> following</li>
+    </a>
+  </div>
 
   </div>
 </div>
+<br><br><br>
+
+
+<div class="row">
+  <% @posts.each do |post| %>
+
+
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#"><%= link_to post.title, post_path(post) %></a>
+          </h4>
+          <h5 class="card-user"><%= link_to post.user.username, user_path(post.user) %></h5>
+          <p class="card-text"><%= post.description %></p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+  <%= button_to "Create New Post", new_post_path, :method => :get %>
+</div>
+<!-- /.row -->
