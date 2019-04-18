@@ -1,52 +1,80 @@
-Title: <%= @post.title %> <br>
-Photo: <img src="<%= @post.photo_url %>"> <br>
-By: <%= @post.user.username %> <br>
-Location: <%= @post.location.name %> <br>
-Description: <%= @post.description %> <br>
+<!-- Page Content -->
+<div class="container">
 
-<% if @post.user.id == @current_user.id %>
-  <%= link_to edit_post_path(@post) do %>
-    <i class="fa fa-pencil-square-o"></i>
-  <% end %>
-  <%= link_to post_path(@post), method: :delete, data: { confirm: "Are you sure?"} do %>
-    <i class="fa fa-trash"></i>
-  <% end %>
-  <br>
-<% end %>
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4"> <%= @post.title %>
+    <small><%= link_to @post.user.username, user_path(@post.user) %></small>
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="<%= @post.photo_url %>" alt="">
+
+      <h5 class="my-3"><i class="fa fa-map-marker"></i> <%= @post.location.name %></h5>
+      <p><%= @post.description %></p>
+
+      <% if @post.user.id == @current_user.id %>
+        <%= link_to edit_post_path(@post) do %>
+          <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+        <%= link_to post_path(@post), method: :delete, data: { confirm: "Are you sure?"} do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+        <br>
+      <% end %>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="comment-wrapper">
+        <h5>Comments:</h5>
+        <div class="panel panel-info">
+          <% @comments.each do |comment| %>
+
+            <strong class="pull-left"><%= link_to comment.user.username, user_path(comment.user) %></strong>
+            <div class="media-body">
+                <span class="text-muted pull-right">
+                    <small class="text-muted"><%= comment.created_at %></small>
+                </span>
+                <p> <br><%= comment.text %> <br>
+                  <% if comment.user.id == @current_user.id %>
+                    <%= link_to edit_comment_path(comment) do %>
+                      <i class="fa fa-pencil-square-o"></i>
+                    <% end %>
+                    <%= link_to comment_path(comment), method: :delete do %>
+                      <i class="fa fa-trash"></i>
+                    <% end %>
+                  <% end %>
+                </p>
+            </div>
+
+          <% end %>
+
+          <hr>
+          <div class="form-inline">
+            <%= form_for @comment do |f| %>
+              <%= f.text_area :text, placeholder: "Add a new comment...", rows: 3, cols: 33 %><br>
+              <%= f.hidden_field :post_id, value: @post.id %>
+              <%= f.hidden_field :user_id, value: @current_user.id %>
+              <div class="pull-right"><%= f.submit "Post" %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- /.comment-wrapper -->
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+
+
+
 <br>
-
-
-
-
-
-
-Comments:
-
-<br>
-<% @comments.each do |comment| %>
-<br>
-Username: <%= comment.user.username %> <br>
-Comment: <%= comment.text %> <br>
-  <% if comment.user.id == @current_user.id %>
-    <%= link_to edit_comment_path(comment) do %>
-      <i class="fa fa-pencil-square-o"></i>
-    <% end %>
-    <%= link_to comment_path(comment), method: :delete do %>
-      <i class="fa fa-trash"></i>
-    <% end %>
-  <% end %> <br>
-<% end %>
-<br>
-
-
-
-
-Add a New Comment:
-
-<br>
-<%= form_for @comment do |f| %>
-  <%= f.text_area :text %><br>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.hidden_field :user_id, value: @current_user.id %>
-  <%= f.submit %>
-<% end %>
