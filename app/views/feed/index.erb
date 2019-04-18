@@ -1,0 +1,30 @@
+<div class="container">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">Your Feed
+  </h1>
+
+  <div class="row">
+
+
+    <% @posts.each do |post| %>
+
+
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= link_to post.title, post_path(post) %></a>
+            </h4>
+            <h5 class="card-user"><%= link_to post.user.username, user_path(post.user) %></h5>
+            <p class="card-text"><%= post.description %></p>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+
+  </div>
+  <!-- /.row -->

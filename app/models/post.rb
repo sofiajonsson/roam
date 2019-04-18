@@ -3,6 +3,9 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  scope :newest_to_oldest, -> { order(created_at: :desc, id: :desc) }
+  default_scope {newest_to_oldest}
+
   validates :title, presence: true, length: {in: 3..40}, uniqueness: true
   validates :description, presence: true, length: {in: 3..500}
 
@@ -14,6 +17,9 @@ class Post < ApplicationRecord
     end
   end
 
-
+  def self.feed_posts(user)
+    followers = user.followed_users
+    where(user_id: followers)
+  end
 
 end
