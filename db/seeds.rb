@@ -25,11 +25,11 @@ l10 = Location.create(country: "Japan", city: "Tokyo")
 
 
 puts "Seeding Users..."
-u1 = User.create(username: "Sofia", password: "hello", bio: "I'm just here for the international dog pics")
-u2= User.create(username: "Mera", password: "hello", bio: "Hi, my name Mera. I like to travel")
-u3 = User.create(username: "Doug", password: "hello", bio: "Looking for good coffee, and good beer")
-u4 = User.create(username: "Rylan", password: "hello", bio: "I'm just a living dream")
-u5 = User.create(username: "Lotti", password: "hello", bio: "Always on the hunt for the best treats")
+u1 = User.create(username: "Sofia", password: "hello", bio: "I'm just here for the international dog pics", photo_url: "https://amp.businessinsider.com/images/597fe3164528e672188b5bd9-750-562.jpg")
+u2= User.create(username: "Mera", password: "hello", bio: "Hi, my name Mera. I like to travel", photo_url: "https://vignette.wikia.nocookie.net/newdcmovieuniverse/images/7/7b/Mera1.PNG/revision/latest?cb=20190207195251")
+u3 = User.create(username: "Doug", password: "hello", bio: "Looking for good coffee, and good beer", photo_url: "https://timeentertainment.files.wordpress.com/2011/07/09_top10cartoonthemesongs1.jpg?w=720&h=480&crop=1")
+u4 = User.create(username: "Rylan", password: "hello", bio: "I'm just a living dream", photo_url: "http://coolmenshair.com/wp-content/uploads/rylan-clark-hair_zps1a4be35b.jpg")
+u5 = User.create(username: "Lotti", password: "hello", bio: "Always on the hunt for the best treats", photo_url: "https://towsontigers.com/images/2018/8/22/Lotti_Sam.JPG?width=300")
 
 
 puts "Seeding Posts..."
