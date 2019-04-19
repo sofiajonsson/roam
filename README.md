@@ -30,7 +30,7 @@ Build a Rails app that:
 
 ## Database Diagram
 
-![alt text](../app/assets/images/Models.png)
+![alt text](./app/assets/images/Models.png)
 
 ### Thank you to:
 https://dev.to/knheidorn/rails-crash-course-building-follower-following-relationship-4kjl
