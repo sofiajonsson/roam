@@ -1,38 +1,26 @@
 <div class="user-profile">
   <div class="profile row">
-
     <div class="col-md-4 avatar">
       <!-- LEFT: AVATAR HERE -->
       <div class="wrapper">
-        <img src="<%= @user.photo_url %>">
+        <img src="<%= @current_user.photo_url %>">
       </div>
     </div>
     <div class="col-md-8 basic-info">
     <!-- RIGHT: USER INFORMATION HERE -->
 
-    <%if @user.id == @current_user.id%>
+
   <h6>Followers: <%= @current_user.passive_relationships.count %></h6>
   <h6>Following: <%= @current_user.active_relationships.count %></h6>
-    <%else%>
-  <h6>Followers: <%= @user.passive_relationships.count %></h6>
-  <h6>Following: <%= @user.active_relationships.count %></h6>
-    <%end%>
 
-    <% if @user.id == @current_user.id%>
-   <b><%= link_to "Edit User", edit_user_path(@user) %></b>
- <% else %>
-   <% if @user_relationship %>
-     <%= link_to "Stop Following", @user_relationship, method: :delete %>
-   <% else %>
-     <%= form_for :user_relationship, url: user_relationships_path, html: { method: :post } do |f| %>
-       <%= f.hidden_field :followed_id, value: @user.id %>
-       <%= f.submit 'Follow', class: 'btn btn-success' %>
-     <% end %>
-   <% end %>
- <% end %>
-"<%= @user.bio %>"
-<%= button_to "Create New Post", new_post_path, :method => :get %>
+
+
+   <b><%= link_to "Edit User", edit_user_path(@current_user) %></b>
+
+
+"<%= @current_user.bio %>"
   </div>
+
   </div>
 </div>
 <br><br><br>
@@ -40,6 +28,8 @@
 
 <div class="row">
   <% @posts.each do |post| %>
+
+
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
         <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
@@ -54,5 +44,6 @@
     </div>
 
   <% end %>
+  <%= button_to "Create New Post", new_post_path, :method => :get %>
 </div>
 <!-- /.row -->
