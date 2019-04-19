@@ -1,10 +1,10 @@
 
-#Welcome to Roam!
+# Welcome to Roam!
 Created by: Mera Stackhouse and Sofia Jonsson
-###What is Roam?
+### What is Roam?
 Roam was created to be a travel focused social media site. Users can signup/login and browse posts. They are able to browse other users and follow and unfollow them. They will have a personalized feed, accessed through the navigation bar, based on who they follow and their posts.
 
-###Configuration
+### Configuration
 - Clone the repository to your computer
 - Navigate to the parent folder, `roam`
 - Run `bundle install`, `rails db:migrate`, `rails db:seed`
@@ -12,7 +12,7 @@ Roam was created to be a travel focused social media site. Users can signup/logi
 - Open `http://localhost:3000/` in your browser
 - Also available on: https://roam-travel-app.herokuapp.com/
 
-###Project Requirements
+### Project Requirements
 Build a Rails app that:
 
 1. Has at least five models. Of these, there must be at least one relationship between your models.
@@ -28,10 +28,10 @@ Build a Rails app that:
 6. Uses MVC. Your work should be split up appropriately in the models, views, and controllers that you write.
 
 
-#Database Diagram
+###Database Diagram
 
 ![alt text](Models.png "Models")
-####Thank you to:
+#### Thank you to:
 
 https://dev.to/knheidorn/rails-crash-course-building-follower-following-relationship-4kjl
 
@@ -46,10 +46,8 @@ https://www.bootdey.com/snippets/view/Simple-Comment-panel#html
 https://www.wikipedia.org ==> Used for random bits of texts in photo captions
 
 
-* License
-
+#### License
 MIT License
-
 Copyright (c) 2019 Mera Stackhouse and Sofia Jonsson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
