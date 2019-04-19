@@ -30,7 +30,7 @@ Build a Rails app that:
 
 ## Database Diagram
 
-![alt text](./app/assets/images/Models.png)
+![alt text](./app/assets/images/Model.png)
 
 ### Thank you to:
 https://dev.to/knheidorn/rails-crash-course-building-follower-following-relationship-4kjl
@@ -43,7 +43,7 @@ https://startbootstrap.com/snippets/portfolio-item/
 
 https://www.bootdey.com/snippets/view/Simple-Comment-panel#html
 
-https://www.wikipedia.org ==> Used for random bits of texts in photo captions
+https://www.wikipedia.org -> Used for random bits of texts in photo captions
 
 
 ### License
