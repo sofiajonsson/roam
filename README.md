@@ -4,32 +4,32 @@ Welcome to Roam!
 A travel focused social media site.
 
 
-* Authors
+AUTHORS
 Mera Stackhouse and Sofia Jonsson
 
 
-* Configuration
-- download Postgres for the database
-- clone the repository to your computer
-- navigate to the parent folder, roam
-- run bundle install
+CONFIGURATION
+* download Postgres for the database
+* clone the repository to your computer
+* navigate to the parent folder, roam
+* run bundle install
 
 
-* Database creation
-- run rails db:setup
+DATABASE CREATION
+* run rails db:setup
 
 
-* Database initialization
-- run rails db:migrate
-- run rails db:seed
+DATABASE INITIALIZATION
+* run rails db:migrate
+* run rails db:seed
 
 
-* Deployment instructions
-- run rails s
-- navigate to local host in your browser
+DEPLOYMENT INSTRUCTIONS
+* run rails s
+* navigate to local host in your browser
 
 
-* Thank you to
+THANK YOU TO
 
 https://dev.to/knheidorn/rails-crash-course-building-follower-following-relationship-4kjl
 
@@ -42,7 +42,7 @@ https://startbootstrap.com/snippets/portfolio-item/
 https://www.bootdey.com/snippets/view/Simple-Comment-panel#html
 
 
-* License
+LICENSE
 
 MIT License
 
