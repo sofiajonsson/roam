@@ -27,3 +27,5 @@ https://startbootstrap.com/snippets/portfolio-three-column/
 https://fontawesome.com/v4.7.0/icons/
 
 https://startbootstrap.com/snippets/portfolio-item/
+
+https://www.bootdey.com/snippets/view/Simple-Comment-panel#html
