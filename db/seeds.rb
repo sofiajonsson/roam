@@ -40,10 +40,10 @@ l23 = Location.create(country: "Japan", city: "Hokkaido")
 puts "Seeding Users..."
 u1 = User.create(username: "Sofia", password: "hello", bio: "I'm just here for the international dog pics", photo_url: "https://amp.businessinsider.com/images/597fe3164528e672188b5bd9-750-562.jpg")
 u2= User.create(username: "Mera", password: "hello", bio: "Hi, my name Mera. I like to travel", photo_url: "https://vignette.wikia.nocookie.net/newdcmovieuniverse/images/7/7b/Mera1.PNG/revision/latest?cb=20190207195251")
-u3 = User.create(username: "Doug", password: "hello", bio: "Looking for good coffee, and good beer", photo_url: "https://timeentertainment.files.wordpress.com/2011/07/09_top10cartoonthemesongs1.jpg?w=720&h=480&crop=1")
+u3 = User.create(username: "Doug", password: "hello", bio: "Looking for good coffee, and good beer", photo_url: "https://radiowest.kuer.org/sites/radiowest/files/styles/x_large/public/201606/doug_web4.jpg")
 u4 = User.create(username: "Rylan", password: "hello", bio: "I'm just a living dream", photo_url: "http://coolmenshair.com/wp-content/uploads/rylan-clark-hair_zps1a4be35b.jpg")
 u5 = User.create(username: "Lotti", password: "hello", bio: "Always on the hunt for the best treats", photo_url: "https://towsontigers.com/images/2018/8/22/Lotti_Sam.JPG?width=300")
-u6 = User.create(username: "Milo", password: "hello", bio: "Bird Afficionado, traveling the world looking for the coolest birds!", photo_url: "https://collegecandy.files.wordpress.com/2014/11/lumbersexualmain.jpg?quality=88")
+u6 = User.create(username: "Milo", password: "hello", bio: "Bird Afficionado, traveling the world looking for the coolest birds!", photo_url: "http://www.thebeardmag.com/wp-content/uploads/7c3e6c50d78259d530b7d703501c8c99.jpg")
 
 
 puts "Seeding Posts..."

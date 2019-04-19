@@ -1,11 +1,62 @@
-<%= form_for @user do |f| %>
-<%= f.label :username, "Input your Username:" %>
-<%= f.text_field :username %><br>
-<%= f.label :password, "Input your Password:" %>
-<%= f.password_field :password %><br>
-<%= f.label :bio %>
-<%= f.text_area :bio %>
-<%= f.label :photo_url %>
-<%= f.text_field :photo_url %>
-<%= f.submit "Submit" %>
-<% end %>
+
+
+<div class="user-edit-page">
+  <div class="actions">
+    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Activity Log</a>
+      <a class="nav-link" data-toggle="pill">Newsfeed Preferences</a>
+      <a class="nav-link" data-toggle="pill">Settings</a>
+      <a class="nav-link" data-toggle="pill">Linked Accounts</a>
+      <a class="nav-link" data-toggle="pill">Security Preferences</a>
+
+    </div>
+  </div>
+  <div class="details tab-content">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <%= form_with model: @current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
+        <div class="form-group row">
+
+        <div class="col-sm-9">
+          <p class="username"><%=@current_user.username %></p>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :photo_url, class: 'col-sm-3 col-form-label' %>
+          <div class="col-sm-9">
+            <%= f.text_area :photo_url, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :username, class: 'col-sm-3 col-form-label' %>
+          <div class="col-sm-9">
+            <%= f.text_field :username, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password, class: 'col-sm-3 col-form-label' %>
+          <div class="col-sm-9">
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :bio, class: 'col-sm-3 col-form-label' %>
+          <div class="col-sm-9">
+            <%= f.text_area :bio, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-9">
+            <%= f.submit "Submit", class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
