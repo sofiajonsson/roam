@@ -15,10 +15,12 @@
 
 
 
-   <b><%= link_to "Edit User", edit_user_path(@current_user) %></b>
+
 
 
 "<%= @current_user.bio %>"
+  <%= button_to "Create New Post", new_post_path, :method => :get %>
+ <b><%= link_to "Edit User", edit_user_path(@current_user) %></b>
   </div>
 
   </div>
@@ -44,6 +46,5 @@
     </div>
 
   <% end %>
-  <%= button_to "Create New Post", new_post_path, :method => :get %>
 </div>
 <!-- /.row -->
