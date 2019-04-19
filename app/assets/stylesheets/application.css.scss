@@ -19,6 +19,7 @@
 @import "font-awesome";
 @import "users";
 @import "posts";
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 
 
@@ -67,3 +68,19 @@
     color: black;
 
 }
+
+/* Mera's CSS below */
+.message {
+  color: green;
+}
+
+.errors {
+  color: red;
+}
+
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
+
+/* Mera's CSS above */
