@@ -1,5 +1,6 @@
 <div class="user-profile">
   <div class="profile row">
+
     <div class="col-md-4 avatar">
       <!-- LEFT: AVATAR HERE -->
       <div class="wrapper">
@@ -30,17 +31,15 @@
    <% end %>
  <% end %>
 "<%= @user.bio %>"
+<%= button_to "Create New Post", new_post_path, :method => :get %>
   </div>
-
   </div>
 </div>
 <br><br><br>
 
-<%= button_to "Create New Post", new_post_path, :method => :get %>
+
 <div class="row">
   <% @posts.each do |post| %>
-
-
     <div class="col-lg-4 col-sm-6 mb-4">
       <div class="card h-100">
         <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
