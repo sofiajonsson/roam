@@ -14,9 +14,10 @@
   <%= label_tag :password %>
   <div class="field">
     <%= password_field_tag :password %>
-  </div>
+  </div> <br>
   <%= submit_tag 'Login', {class: 'ui medium pink button inverted'} %>
 <% end %>
 
+<br>
 
 <%= button_to "Create Account", new_user_path, method: :get %>
