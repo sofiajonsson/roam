@@ -13,7 +13,13 @@ class SearchController < ApplicationController
     elsif params.key?(:search_term)
       if !params[:search_term].empty?
         @terms = params[:search_term]
-        @posts = Post.where(['title ILIKE ? OR description ILIKE ?', "%#{@terms}%", "%#{@terms}%"])
+        @posts = Post.where(
+          'title ILIKE :title OR description ILIKE :description',
+          {
+            title: "%#{@terms}%",
+            description: "%#{@terms}%"
+          }
+        )
       else
         redirect_to posts_path
       end

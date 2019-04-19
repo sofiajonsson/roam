@@ -27,6 +27,12 @@
 <br>
 
 
+<% if @posts.empty? %>
+<%= "Sorry there are no posts at that location, but you can make a " %>
+<%= link_to "new post!", new_post_path %>
+<% end %>
+
+
 
 
   <div class="row">
