@@ -7,10 +7,13 @@ Roam was created to be a travel focused social media site. Users can signup/logi
 ## Configuration
 - Clone the repository to your computer
 - Navigate to the parent folder, `roam`
-- Run `bundle install`, `rails db:migrate`, `rails db:seed`
+- Run `bundle install`
 - Run `rails s` in your server to start your local server
 - Open `http://localhost:3000/` in your browser
 - Also available on: https://roam-travel-app.herokuapp.com/
+
+## Demo
+[![Roam_Application](lib/art/roam_screenshot.png)](https://youtu.be/I6XZZH1GCUQ)
 
 ## Project Requirements
 Build a Rails app that:
