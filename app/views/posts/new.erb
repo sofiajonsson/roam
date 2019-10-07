@@ -20,12 +20,12 @@
 
 
   <%= f.label "Or Make a New Location" %> <br>
-  <%= f.fields_for :location, @location do |form| %>
-    <%= form.label :city %>
-    <%= form.text_field :city %><br>
-    <%= form.label :country %>
-    <%= form.select :country, Location::COUNTRIES, include_blank: "Select a Country"%><br>
-  <% end %>
+    <%= f.fields_for :location, @location do |form| %>
+      <%= form.label :city %>
+      <%= form.text_field :city %><br>
+      <%= form.label :country %>
+      <%= form.select :country, Location::COUNTRIES, include_blank: "Select a Country"%><br>
+    <% end %>
 
   <%= f.label :description %>
   <%= f.text_area :description, rows: 3, cols: 33  %><br>

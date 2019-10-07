@@ -9,36 +9,31 @@
   <div class='message'><%= flash[:message] %></div>
   <br>
 
-<div class="row"> <h6>
-  <div class='form-inline'><%= form_tag('/search', method: :get) do %>
-    <%= text_field_tag :search_term,  params[:search_term], placeholder: 'Search here...' %>
-    <%= submit_tag "Go", name: nil %>
-  <% end %>
-  &nbsp &nbsp
+  <div class="row"> <h6>
+    <div class='form-inline'><%= form_tag('/search', method: :get) do %>
+      <%= text_field_tag :search_term,  params[:search_term], placeholder: 'Search here...' %>
+      <%= submit_tag "Go", name: nil %>
+    <% end %>
+    &nbsp &nbsp
+    <br>
+    <%= form_tag('/search', method: :get) do %>
+      Or Filter by Location
+      <%= select_tag :location_id, options_from_collection_for_select(Location.all, "id", "name"),  include_blank: "Select" %> &nbsp;
+      <%= submit_tag "Go" %>
+    <% end %>
+    </h6>
+    <br>
+  </div>
   <br>
-  <%= form_tag('/search', method: :get) do %>
-    Or Filter by Location
-    <%= select_tag :location_id, options_from_collection_for_select(Location.all, "id", "name"),  include_blank: "Select" %> &nbsp;
-    <%= submit_tag "Go" %>
+
+  <% if @posts.empty? %>
+  <%= "Sorry there are no posts at that location, but you can make a " %>
+  <%= link_to "new post!", new_post_path %>
   <% end %>
-  </h6>
-  <br>
-</div>
-<br>
-
-
-<% if @posts.empty? %>
-<%= "Sorry there are no posts at that location, but you can make a " %>
-<%= link_to "new post!", new_post_path %>
-<% end %>
 
 
   <div class="row">
-
-
     <% @posts.each do |post| %>
-
-
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
           <a href="<%= post_path(post) %>"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
@@ -51,7 +46,6 @@
           </div>
         </div>
       </div>
-
     <% end %>
 
 

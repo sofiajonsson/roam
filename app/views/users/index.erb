@@ -8,11 +8,7 @@
   <br>
 
   <div class="row">
-
-
     <% @users.each do |user| %>
-
-
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
           <a href="<%= user_path(user) %>"><img class="card-img-top" src="<%= user.photo_url %>" alt=""></a>
@@ -23,8 +19,5 @@
           </div>
         </div>
       </div>
-
     <% end %>
-
-
   </div>

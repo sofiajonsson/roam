@@ -9,42 +9,32 @@
     <div class="col-md-8 basic-info">
     <!-- RIGHT: USER INFORMATION HERE -->
 
-
   <h6>Followers: <%= @current_user.passive_relationships.count %></h6>
   <h6>Following: <%= @current_user.active_relationships.count %></h6>
 
-
-
-
-
-
-"<%= @current_user.bio %>"
-  <%= button_to "Create New Post", new_post_path, :method => :get %>
- <b><%= link_to "Edit User", edit_user_path(@current_user) %></b>
-  </div>
-
-  </div>
-</div>
-<br><br><br>
-
-
-<div class="row">
-  <% @posts.each do |post| %>
-
-
-    <div class="col-lg-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#"><%= link_to post.title, post_path(post) %></a>
-          </h4>
-          <h5 class="card-user"><%= link_to post.user.username, user_path(post.user) %></h5>
-          <p class="card-text"><%= post.description %></p>
-        </div>
-      </div>
+  "<%= @current_user.bio %>"
+    <%= button_to "Create New Post", new_post_path, :method => :get %>
+   <b><%= link_to "Edit User", edit_user_path(@current_user) %></b>
     </div>
 
+    </div>
+  </div>
+  <br><br><br>
+
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="<%= post.photo_url %>" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= link_to post.title, post_path(post) %></a>
+            </h4>
+            <h5 class="card-user"><%= link_to post.user.username, user_path(post.user) %></h5>
+            <p class="card-text"><%= post.description %></p>
+          </div>
+        </div>
+      </div>
   <% end %>
 </div>
 <!-- /.row -->
