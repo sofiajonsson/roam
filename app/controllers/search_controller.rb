@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
 
-
   def index
     # byebug
     if params.key?(:location_id)

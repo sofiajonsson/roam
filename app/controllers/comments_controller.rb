@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
 	def new
 	end
 
@@ -36,7 +37,7 @@ class CommentsController < ApplicationController
 
 	def comment_params
 		params.require(:comment).permit!
-		#same thing, will add correct params later
+		#open params ok for now
 	end
 
 end

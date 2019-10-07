@@ -4,6 +4,4 @@ class FeedController < ApplicationController
     @posts = Post.feed_posts(current_user)
   end
 
-
-
 end

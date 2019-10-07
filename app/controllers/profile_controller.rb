@@ -1,4 +1,5 @@
 class ProfileController < ApplicationController
+
 	def index
 		@current_user = current_user
 		@posts = @current_user.posts.order(created_at: :desc)

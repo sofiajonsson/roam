@@ -36,13 +36,6 @@ class UsersController < ApplicationController
 		redirect_to current_user
 	end
 
-	# def profile
-	# 	@current_user = current_user
-	# 	@user = User.find(params[:id])
-  #   @user_relationship = current_user.active_relationships.where(followed_id: @user.id).first
-  #   render :show
-  # end
-
 	private
 
 	def set_user
@@ -52,4 +45,5 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:username, :password, :bio, :photo_url)
 	end
+	
 end
